@@ -9,7 +9,6 @@ module.exports = {
     github: 'https://github.com/lucis',
     linkedin: 'https://www.linkedin.com/in/lcnjnr/',
   },
-  googleAnalyticsID: 'G-LNB1T85QZ2',
   themeColor: '#3b1550',
   backgroundColor: '#3b1550',
   address: {

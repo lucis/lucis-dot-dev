@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { Container, Button } from 'components/common';
-import dev from 'assets/illustrations/skills.svg';
 import { Wrapper, SkillsWrapper, Details, Thumbnail } from './styles';
 
 export const Skills = () => {
@@ -17,7 +15,7 @@ export const Skills = () => {
         <Details theme={theme}>
           <h1>More about me</h1>
           <p>
-            My name is <b>Luciano Júnior</b> I currently work at a great company called{' '}
+            So, my name is <b>Luciano Júnior</b> and I currently work at a great company called{' '}
             <a href="https://vtex.com">VTEX</a>. I have a bachelor's degree in Computer Science from{' '}
             <a href="https://www.ufcg.edu.br">UFCG</a>, where I've had some great experiences.
           </p>
