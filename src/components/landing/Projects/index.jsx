@@ -6,7 +6,7 @@ import { Wrapper, Grid, Item, Content, Stats, Languages } from './styles';
 const projects = [
   {
     repo: 'lucis/ufcg-pro',
-    description: 'Browser extension to help students and teaches from Federal University of Campina Grande',
+    description: 'Browser extension to help students and teachers from Federal University of Campina Grande',
     tech: ['Vue.js', 'Javascript'],
   },
   {

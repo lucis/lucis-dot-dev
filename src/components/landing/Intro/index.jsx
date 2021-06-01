@@ -15,7 +15,7 @@ const TOPICS = [
   'Automations',
   'Ecommerce',
   'Serverless',
-  'Open source',
+  'Open Source',
   'Podcasts',
   'Culture',
   'Product',
