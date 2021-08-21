@@ -16,8 +16,14 @@ export const Skills = () => {
           <h1>More about me</h1>
           <p>
             So, my name is <b>Luciano Júnior</b> and I currently work at an amazing company called{' '}
-            <a href="https://coastapp.com">Coast</a>. I have a bachelor's degree in Computer Science from{' '}
-            <a href="https://www.ufcg.edu.br">UFCG</a>, where I've had some great experiences.
+            <a href="https://coastapp.com" target="_blank" rel="noopener noreferrer">
+              Coast
+            </a>
+            . have a bachelor's degree in Computer Science from{' '}
+            <a href="https://portal.ufcg.edu.br/" target="_blank" rel="noopener noreferrer">
+              UFCG
+            </a>
+            , where I've had some great experiences.
           </p>
           <Button as="a" target="_blank" href="https://linkedin.com/in/lcnjnr">
             Check my LinkedIn
