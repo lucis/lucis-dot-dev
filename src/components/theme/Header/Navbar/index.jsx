@@ -4,11 +4,13 @@ import { ThemeContext } from 'providers/ThemeProvider';
 import { Container } from 'components/common';
 import styled from 'styled-components';
 import NavbarLinks from '../NavbarLinks';
+import ForPages from '../NavbarLinks/forPages';
 import { Wrapper, Brand } from './styles';
 
-const Navbar = () => {
+const Navbar = ({ isHome }) => {
   const { theme } = useContext(ThemeContext);
 
+  const NavComponent = isHome ? NavbarLinks : ForPages;
   return (
     <Wrapper as={Container}>
       <TitleDiv>
@@ -17,7 +19,7 @@ const Navbar = () => {
           Lucis
         </Brand>
       </TitleDiv>
-      <NavbarLinks desktop />
+      <NavComponent desktop />
     </Wrapper>
   );
 };
