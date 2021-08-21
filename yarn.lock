@@ -5871,14 +5871,6 @@ gatsby-plugin-favicon@^3.1.6:
     html-react-parser "^0.6.4"
     lodash "^4.17.11"
 
-gatsby-plugin-google-analytics@^2.0.8:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.2.2.tgz#b4d2a10e1863bb4c92084a1778c4a2aab53292f5"
-  integrity sha512-at0eUPTyetGuPW1ceISAv58a9fwbwsLX9V5ucwKYShs98Spil/FWviukW0f1A2LUsWOGTiVJYReS7IVVw+FlIA==
-  dependencies:
-    "@babel/runtime" "^7.8.7"
-    minimatch "3.0.4"
-
 gatsby-plugin-google-gtag@^3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-3.6.0.tgz#b182bbc29ff0e6efacc37a3ff528390bd85d0054"
@@ -6024,6 +6016,15 @@ gatsby-source-graphql@^2.1.21:
     invariant "^2.2.4"
     node-fetch "^1.7.3"
     uuid "^3.4.0"
+
+gatsby-source-notion-api@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-notion-api/-/gatsby-source-notion-api-0.10.0.tgz#028a3fc01ff913ccc594c64410ced8d7892f5086"
+  integrity sha512-By8G364PjmAsP+VbmRXPErz7SHojqsY4cgrNLhObQEnYDjICK+ViUADJhT6VsDKftK1itxf2SWJ9i6FYCIqBZQ==
+  dependencies:
+    node-fetch "^2.6.1"
+    or-pipets "^1.0.1"
+    yaml "^1.10.2"
 
 gatsby-telemetry@^1.2.3:
   version "1.2.3"
@@ -8937,6 +8938,11 @@ node-fetch@^1.0.1, node-fetch@^1.7.3:
     encoding "^0.1.11"
     is-stream "^1.0.1"
 
+node-fetch@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.6.1.tgz#045bd323631f76ed2e2b55573394416b639a0052"
+  integrity sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
+
 node-forge@0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/node-forge/-/node-forge-0.9.0.tgz#d624050edbb44874adca12bb9a52ec63cb782579"
@@ -9319,6 +9325,11 @@ optionator@^0.8.2, optionator@^0.8.3:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
     word-wrap "~1.2.3"
+
+or-pipets@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/or-pipets/-/or-pipets-1.0.1.tgz#0699c99f95a535614a585cd7fb3a1a216a47b5c0"
+  integrity sha512-xgIIdB4w00pbhtNPYLF/caifwbc4KrE7jy4WqiDRzRrC2g3YVR4ypRwbKRA/bXzftQEA2SK8c+wKI2R7kqKiLQ==
 
 original@>=0.0.5, original@^1.0.0:
   version "1.0.2"
@@ -13547,6 +13558,11 @@ yaml-loader@^0.5.0:
   integrity sha512-p9QIzcFSNm4mCw/m5NdyMfN4RE4aFZJWRRb01ERVNGCym8VNbKtw3OYZXnvUIkim6U/EjqE/2yIh9F/msShH9A==
   dependencies:
     js-yaml "^3.5.2"
+
+yaml@^1.10.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
+  integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
 
 yaml@^1.7.2:
   version "1.8.3"

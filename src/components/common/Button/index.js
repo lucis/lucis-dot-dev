@@ -4,6 +4,7 @@ export const Button = styled.button`
   cursor: pointer;
   border-radius: 3px;
   padding: 0.7rem 2.5rem;
+  margin-right: 10px;
   border: none;
   -webkit-appearance: none;
   -webkit-touch-callout: none;
@@ -13,7 +14,7 @@ export const Button = styled.button`
   -ms-user-select: none;
   user-select: none;
   color: #fff;
-  background: #0074d9;
+  background: #582be8;
 
   &:focus {
     outline: none;
@@ -21,6 +22,10 @@ export const Button = styled.button`
 
   &:disabled {
     background: gray;
+  }
+
+  &:hover {
+    opacity: 0.8;
   }
 
   ${({ secondary }) =>

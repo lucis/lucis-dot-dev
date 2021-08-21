@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import detailsIllustration from 'assets/illustrations/details.svg';
 
+export const ButtonContainer = styled.div`
+  display: flex;
+`;
+
 export const Wrapper = styled.div`
   background-image: url(${detailsIllustration});
   background-size: contain;
