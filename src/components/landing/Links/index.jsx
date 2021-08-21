@@ -86,7 +86,7 @@ export const Links = () => {
   return (
     <Wrapper as={Container} id="links">
       <h2>Recommended Links</h2>
-      <Desc>From time to time I save some links that I find interesting. Here are some of them: </Desc>
+      <Desc>From time to time, I save some links that I find interesting. Here are some of them: </Desc>
       <LinksComponent links={links} theme={theme} />
       <More>
         <SeeMoreLink to="/links">See more</SeeMoreLink>
