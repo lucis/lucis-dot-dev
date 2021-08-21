@@ -2,20 +2,13 @@ import React, { useContext } from 'react';
 import { Header } from 'components/theme';
 import { Container, Layout, SEO } from 'components/common';
 import { Wrapper } from 'components/landing/Projects/styles';
+import { useAllLinks } from 'components/landing/Links';
 import { Links } from 'components/landing/Links/Links';
 import { ThemeContext } from 'providers/ThemeProvider';
 
 export default () => {
   const { theme } = useContext(ThemeContext);
-  const links = [
-    { url: 'https://news.ycombinator.com/', title: 'Hacker News', tags: ['Tech', 'Javascript'], comment: 'Oi' },
-    {
-      url: 'https://news.ycombinator.com/news.ycombinator.comnews.ycombinator.comnews.ycombinator.comj',
-      title: 'Second News',
-      tags: ['Tech', 'Javascript'],
-      comment: 'Oi',
-    },
-  ];
+  const links = useAllLinks();
 
   return (
     <Layout>

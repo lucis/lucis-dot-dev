@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Link } from 'gatsby';
+import React, { useContext, useMemo } from 'react';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { Container } from 'components/common';
 import styled from 'styled-components';
@@ -23,17 +23,66 @@ const SeeMoreLink = styled(props => <Link {...props} />)`
   }
 `;
 
+const query = graphql`
+  query MyQuery {
+    allNotion {
+      edges {
+        node {
+          title
+          updatedAt
+          properties {
+            URL {
+              value
+            }
+            Tags {
+              value {
+                name
+              }
+            }
+            Comments {
+              value
+            }
+            Public {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const useAllLinks = () => {
+  const data = useStaticQuery(query);
+  const links = useMemo(
+    () =>
+      (data ? data.allNotion.edges : [])
+        .map(({ node }) => node)
+        .map(({ properties, title }) => {
+          const props = Object.keys(properties).reduce((acc, key) => {
+            if (!properties[key]) return acc;
+            acc[key] = properties[key].value;
+            return acc;
+          }, {});
+          return {
+            title,
+            isPublic: props.Public,
+            url: props.URL,
+            tags: props.Tags.map(({ name }) => name),
+            comment: props.Comments,
+          };
+        })
+        .filter(({ isPublic }) => isPublic),
+    [data]
+  );
+
+  return links;
+};
+
 export const Links = () => {
   const { theme } = useContext(ThemeContext);
-  const links = [
-    { url: 'https://news.ycombinator.com/', title: 'Hacker News', tags: ['Tech', 'Javascript'], comment: 'Oi' },
-    {
-      url: 'https://news.ycombinator.com/news.ycombinator.comnews.ycombinator.comnews.ycombinator.comj',
-      title: 'Second News',
-      tags: ['Tech', 'Javascript'],
-      comment: 'Oi',
-    },
-  ];
+  const links = useAllLinks().slice(0, 5);
+
   return (
     <Wrapper as={Container} id="links">
       <h2>Recommended Links</h2>

@@ -12,7 +12,7 @@ export const Header = ({ isHome = true }) => {
       <Overlay sidebar={sidebar} onClick={() => toggle(!sidebar)} />
       <Navbar isHome={isHome} />
       <Hamburger sidebar={sidebar} toggle={toggle} />
-      <Sidebar sidebar={sidebar} toggle={toggle} />
+      <Sidebar sidebar={sidebar} toggle={toggle} isHome={isHome} />
     </Wrapper>
   );
 };

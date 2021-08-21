@@ -10,13 +10,13 @@ const LContainer = styled.ul`
 `;
 
 const Link = styled.li`
-  width: 100%;
   height: 100%;
   overflow: hidden;
   align-items: center;
   justify-content: space-between;
   @media (max-width: 960px) {
     flex-direction: column;
+    align-items: flex-start;
   }
   display: flex;
   margin-bottom: 8px;
@@ -45,9 +45,12 @@ const AHref = styled.a`
 const LinkColumn = styled.div`
   flex-direction: column;
   display: flex;
-  width: 50%;
-  @media (max-width: 960px) {
+  width: 100%;
+  @media (min-width: 960px) {
+    width: 50%;
+    margin-bottom: 0;
   }
+  margin-bottom: 10px;
 `;
 
 const Tag = styled.div`
@@ -63,7 +66,11 @@ const Tag = styled.div`
 `;
 
 const TagsColumn = styled.div`
-  width: 20%;
+  @media (min-width: 960px) {
+    width: 20%;
+    margin-top: 0;
+  }
+  margin-top: 10px;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
@@ -74,7 +81,9 @@ const TagsColumn = styled.div`
 const CommentColumn = styled.div`
   flex-direction: column;
   display: flex;
-  width: 30%;
+  @media (min-width: 960px) {
+    width: 30%;
+  }
 `;
 
 const URLA = styled.a`
@@ -109,6 +118,7 @@ const getColorForTag = tag => {
   const code = Math.abs(hashWord(tag));
   return colorPool[code % colorPool.length];
 };
+
 export const Links = ({ links, theme }) => (
   <LContainer>
     {links.map(({ url, title, tags, comment }) => (
