@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from 'providers/ThemeProvider';
 import { Container, Button } from 'components/common';
-import { Wrapper, SkillsWrapper, Details, Thumbnail } from './styles';
+import { Wrapper, SkillsWrapper, Details, Thumbnail, ButtonContainer } from './styles';
 
 export const Skills = () => {
   const { theme } = useContext(ThemeContext);
@@ -25,9 +25,14 @@ export const Skills = () => {
             </a>
             , where I've had some great experiences.
           </p>
-          <Button as="a" target="_blank" href="https://linkedin.com/in/lcnjnr">
-            Check my LinkedIn
-          </Button>
+          <ButtonContainer>
+            <Button as="a" secondary target="_blank" href="https://linkedin.com/in/lcnjnr">
+              Check my LinkedIn
+            </Button>
+            <Button as="a" target="_blank" href="https://polywork.lucis.dev">
+              Check my Polywork
+            </Button>
+          </ButtonContainer>
         </Details>
       </SkillsWrapper>
     </Wrapper>

@@ -20,7 +20,7 @@ const projects = [
     tech: ['Elixir', 'Phoenix Liveview'],
   },
   {
-    repo: 'lucis/edjcard',
+    repo: 'lucis/ejdcard',
     description: 'Web app to track credit in a mid-size indoor event',
     tech: ['React.js', 'Javascript'],
   },
