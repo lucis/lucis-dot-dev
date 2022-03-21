@@ -15,7 +15,7 @@ export const Skills = () => {
         <Details theme={theme}>
           <h1>More about me</h1>
           <p>
-            So, my name is <b>Luciano Júnior</b> and I currently work at an amazing company called{' '}
+            I currently work at an amazing company called{' '}
             <a href="https://coastapp.com" target="_blank" rel="noopener noreferrer">
               Coast
             </a>
