@@ -7,10 +7,11 @@ import { Wrapper, IntroWrapper, Details, Thumbnail } from './styles';
 
 const TOPICS = [
   'Distributed Systems',
+  'Deno',
   'Elixir/Erlang',
   'Typescript',
   'Firebase',
-  'Gatsby.js',
+  'Remix',
   'Node.js',
   'Automations',
   'Ecommerce',

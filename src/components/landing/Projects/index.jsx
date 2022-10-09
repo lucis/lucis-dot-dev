@@ -20,6 +20,11 @@ const projects = [
     tech: ['Elixir', 'Phoenix Liveview'],
   },
   {
+    repo: 'meu-santinho/meu-santinho',
+    description: 'Web app that generates digital ballot paper for Brazilian elections.',
+    tech: ['Deno', 'Fresh'],
+  },
+  {
     repo: 'lucis/ejdcard',
     description: 'Web app to track credit in a mid-size indoor event',
     tech: ['React.js', 'Javascript'],
