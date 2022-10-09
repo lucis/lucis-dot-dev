@@ -15,11 +15,11 @@ export const Skills = () => {
         <Details theme={theme}>
           <h1>More about me</h1>
           <p>
-            I currently work at an amazing company called{' '}
-            <a href="https://coastapp.com" target="_blank" rel="noopener noreferrer">
-              Coast
+            I'm currently working on{' '}
+            <a href="https://deco.cx" target="_blank" rel="noopener noreferrer">
+              Deco
             </a>
-            . have a bachelor's degree in Computer Science from{' '}
+            , a company that will change how we build frontends. I have a bachelor's degree in Computer Science from{' '}
             <a href="https://portal.ufcg.edu.br/" target="_blank" rel="noopener noreferrer">
               UFCG
             </a>
