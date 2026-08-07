@@ -1,5 +1,5 @@
 ---
-title: "VTEX"
+title: "VTEX — Enterprise Commerce Platform"
 description: "Software engineering at VTEX — shipping production software for a global enterprise commerce platform."
 illustration: ../../assets/illustrations/vtex.jpg
 url: https://vtex.com
