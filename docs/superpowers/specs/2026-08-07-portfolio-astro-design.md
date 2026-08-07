@@ -125,8 +125,7 @@ O arquivo local `/Users/lucis/personal/resume/resume.pdf` serve só para inspira
 ## Visual / tokens
 
 - Fundo off-white; texto preto; bordas cinza muito claras
-- Display: serif editorial (ex. Source Serif 4 ou equivalente — **não** Inter/Roboto/Arial/system default)
-- Body: sans limpa distinta do display
+- Tipografia: **Georgia** (serif) para display e body — stack `Georgia, "Times New Roman", Times, serif`
 - Cards: borda leve, cantos levemente arredondados; hover escurece borda ou fundo mínimo
 - Ilustrações woodcut como âncora visual (avatar circular; thumbs retangulares nos cards)
 - Espaçamento generoso; composição de uma coluna de conteúdo, sem dashboard de cards genéricos
