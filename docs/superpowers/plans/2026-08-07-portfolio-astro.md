@@ -452,25 +452,6 @@ export async function getPublishedProjects(): Promise<CollectionEntry<'projects'
 }
 ```
 
-Teste alinhado ao shape:
-
-```ts
-import { describe, expect, it } from 'vitest';
-import { sortPublished } from './projects';
-
-describe('sortPublished', () => {
-  it('filters drafts and sorts by order ascending', () => {
-    const result = sortPublished([
-      { id: 'c', data: { order: 3, draft: false } },
-      { id: 'a', data: { order: 1, draft: false } },
-      { id: 'hidden', data: { order: 0, draft: true } },
-      { id: 'b', data: { order: 2, draft: false } },
-    ]);
-    expect(result.map((p) => p.id)).toEqual(['a', 'b', 'c']);
-  });
-});
-```
-
 Criar os 5 `.md`, os SVGs placeholder e `src/content.config.ts` conforme tabelas acima.
 
 - [ ] **Step 4: Rodar testes e build**
