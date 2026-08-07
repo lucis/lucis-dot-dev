@@ -1,7 +1,6 @@
 export const site = {
   name: 'Luciano de Oliveira',
   titles: ['Staff Product Engineer', 'AI-native builder'],
-  bio: 'I build products that solve real problems with technology, taste, and purpose. From insight to delivery, from idea to scale — always learning, always sharing.',
   avatar: {
     alt: 'Woodcut-style portrait of Luciano de Oliveira',
   },
