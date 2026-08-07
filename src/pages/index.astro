@@ -1,9 +1,7 @@
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Lucis</title>
-  </head>
-  <body>
-    <h1>Lucis</h1>
-  </body>
-</html>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+<BaseLayout>
+  <p>{site.name}</p>
+</BaseLayout>
