@@ -1,0 +1,22 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "lucis-dev",
+  "workers_dev": true,
+  "compatibility_date": "2026-08-07",
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    {
+      "pattern": "lucis.dev/*",
+      "zone_name": "lucis.dev"
+    },
+    {
+      "pattern": "www.lucis.dev/*",
+      "zone_name": "lucis.dev"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}
