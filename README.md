@@ -34,7 +34,7 @@ Final woodcut assets are not in this repo yet. Replace the SVG placeholders in p
 
 | File | Used for |
 |------|----------|
-| `src/assets/illustrations/avatar.svg` | Sidebar portrait |
+| `src/assets/illustrations/avatar.jpg` | Sidebar portrait |
 | `src/assets/illustrations/sip.svg` | SIP project card |
 | `src/assets/illustrations/coast.svg` | Coast project card |
 | `src/assets/illustrations/matriculas.svg` | Matrículas project card |
