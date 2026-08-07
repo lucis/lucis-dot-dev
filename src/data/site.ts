@@ -5,10 +5,6 @@ export const site = {
   avatar: {
     alt: 'Woodcut-style portrait of Luciano de Oliveira',
   },
-  cta: {
-    label: 'Learn more about me',
-    href: 'https://www.linkedin.com/in/lcnjnr/',
-  },
   socials: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/lcnjnr/' },
     { label: 'GitHub', href: 'https://github.com/lucis' },
