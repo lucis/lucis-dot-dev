@@ -12,12 +12,12 @@ const { title, description, illustration, url } = project.data;
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="group grid grid-cols-1 gap-4 rounded-md border border-line bg-paper p-3 transition-colors hover:border-line-strong hover:bg-white sm:grid-cols-[220px_1fr_auto] sm:items-center"
+  class="group grid grid-cols-1 gap-4 rounded-md border border-line bg-paper p-3 transition-colors hover:border-line-strong hover:bg-white sm:grid-cols-[280px_1fr_auto] sm:items-center"
 >
   <Image
     src={illustration}
     alt=""
-    class="h-36 w-full rounded-sm object-cover sm:h-28"
+    class="aspect-[16/9] w-full rounded-sm object-cover"
   />
   <div>
     <h3 class="text-xl font-bold">{title}</h3>
