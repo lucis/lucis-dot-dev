@@ -1,54 +1,60 @@
 # lucis.dev
 
-Static portfolio for [lucis.dev](https://lucis.dev), built with [Astro](https://astro.build/) 5 and Tailwind CSS 4.
+Portfolio pessoal de [Luciano de Oliveira](https://lucis.dev) — [Astro](https://astro.build/) 5 + Tailwind CSS 4, tipografia Georgia, deploy no [Cloudflare Workers](https://developers.cloudflare.com/workers/).
 
 ## Develop
 
 ```bash
-nvm use
+nvm use          # Node 22
 npm install
 npm run dev
 ```
 
-Requires Node 22 LTS (see `.nvmrc`).
-
 ## Content
 
-| Location | Purpose |
-|----------|---------|
-| `src/data/site.ts` | Name, titles, bio, CTA, social links, skill tags, SEO |
-| `src/content/projects/` | One Markdown file per featured project |
-| `src/assets/illustrations/` | Woodcut artwork for avatar and project cards |
-
-### Project frontmatter
-
-Each file under `src/content/projects/` uses:
-
-- `title`, `description`, `url`, `order`
-- `illustration` — path to an image under `src/assets/illustrations/` (Astro `image()` schema)
-- `draft` — set `true` to hide from the home page
-
-### Illustrations (placeholders)
-
-Final woodcut assets are not in this repo yet. Replace the SVG placeholders in place (same filenames) or update import paths in `Sidebar.astro` and project frontmatter.
-
-| File | Used for |
+| Path | Conteúdo |
 |------|----------|
-| `src/assets/illustrations/avatar.jpg` | Sidebar portrait |
-| `src/assets/illustrations/sip.svg` | SIP project card |
-| `src/assets/illustrations/coast.svg` | Coast project card |
-| `src/assets/illustrations/matriculas.svg` | Matrículas project card |
-| `src/assets/illustrations/deco.svg` | Deco project card |
-| `src/assets/illustrations/ufcg-pro.svg` | UFCG Pro project card |
+| `src/data/site.ts` | Nome, títulos, socials, skills, SEO |
+| `src/content/projects/*.md` | Projetos em destaque |
+| `src/assets/illustrations/` | Avatar e woodcuts dos cards |
 
-The site does not publish or link a resume PDF.
+### Frontmatter dos projetos
 
-## Build
+- `title`, `description`, `order` (obrigatórios)
+- `illustration` — imagem em `src/assets/illustrations/`
+- `url` — opcional; sem URL o card não é link
+- `draft: true` — omite da home
+
+### Ilustrações
+
+| Arquivo | Uso |
+|---------|-----|
+| `avatar.jpg` | Sidebar + favicon |
+| `sip.jpg` | SIP / Santana |
+| `coast.jpg` | Coast |
+| `deco.jpg` | deco |
+| `vtex.jpg` | VTEX |
+| `zed.jpg` | ZED |
+| `ufcg-pro.jpg` | UFCG Pro |
+
+## Scripts
 
 ```bash
-npm test
-npm run build
-npm run preview
+npm test           # Vitest
+npm run check      # astro check
+npm run build      # gera dist/
+npm run preview    # preview local do build
+npm run deploy     # build + wrangler deploy
 ```
 
-Output is static files in `dist/` (suitable for Vercel or any static host).
+## Deploy (Cloudflare Workers)
+
+Config em `wrangler.jsonc` — assets estáticos de `dist/`, rotas `lucis.dev/*` e `www.lucis.dev/*`.
+
+```bash
+npm run deploy
+```
+
+Preview Workers: `https://lucis-dev.luciannojunior.workers.dev`
+
+> Se o apex `lucis.dev` redirecionar para o blog, remova a Redirect Rule correspondente no dashboard da Cloudflare.
