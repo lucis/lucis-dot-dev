@@ -8,6 +8,7 @@ import avatar from '../assets/illustrations/avatar.svg';
   <Image
     src={avatar}
     alt={site.avatar.alt}
+    loading="eager"
     class="h-40 w-40 rounded-full object-cover border border-line"
   />
   <div>
@@ -25,7 +26,7 @@ import avatar from '../assets/illustrations/avatar.svg';
   >
     {site.cta.label} →
   </a>
-  <div class="mt-auto pt-8">
+  <div class="pt-8">
     <SocialLinks />
   </div>
 </aside>
