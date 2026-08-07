@@ -4,7 +4,17 @@ interface Props {
 }
 const { skills } = Astro.props;
 ---
-<div class="inline-flex max-w-full items-start gap-2 rounded-3xl border border-line bg-paper px-4 py-2 text-sm text-muted">
+{/* Mobile: chips that wrap — a single middot pill reads poorly on narrow screens */}
+<ul class="flex flex-wrap justify-center gap-2 sm:hidden">
+  {
+    skills.map((skill) => (
+      <li class="rounded-full border border-line px-3 py-1 text-sm text-muted">{skill}</li>
+    ))
+  }
+</ul>
+
+{/* Desktop: editorial pill from the mockup */}
+<div class="hidden max-w-full items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-sm text-muted sm:inline-flex">
   <span aria-hidden="true">✧</span>
-  <p class="text-balance">{skills.join(' · ')}</p>
+  <p>{skills.join(' · ')}</p>
 </div>
