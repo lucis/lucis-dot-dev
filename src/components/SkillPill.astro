@@ -1,0 +1,10 @@
+---
+interface Props {
+  skills: readonly string[];
+}
+const { skills } = Astro.props;
+---
+<div class="inline-flex max-w-full items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-sm text-muted">
+  <span aria-hidden="true">✧</span>
+  <p class="truncate">{skills.join(' · ')}</p>
+</div>

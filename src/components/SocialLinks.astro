@@ -1,0 +1,17 @@
+---
+import { site } from '../data/site';
+---
+<ul class="flex flex-col gap-2 text-sm">
+  {site.socials.map((item) => (
+    <li>
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline-offset-4 hover:underline"
+      >
+        {item.label}
+      </a>
+    </li>
+  ))}
+</ul>

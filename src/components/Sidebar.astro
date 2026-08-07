@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import { site } from '../data/site';
+import SocialLinks from './SocialLinks.astro';
+import avatar from '../assets/illustrations/avatar.svg';
+---
+<aside class="flex flex-col gap-6">
+  <Image
+    src={avatar}
+    alt={site.avatar.alt}
+    class="h-40 w-40 rounded-full object-cover border border-line"
+  />
+  <div>
+    <h1 class="text-4xl font-bold tracking-tight">{site.name}</h1>
+    {site.titles.map((title) => (
+      <p class="text-base text-muted">{title}</p>
+    ))}
+  </div>
+  <p class="text-base italic leading-relaxed text-ink/90">{site.bio}</p>
+  <a
+    href={site.cta.href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="underline underline-offset-4"
+  >
+    {site.cta.label} →
+  </a>
+  <div class="mt-auto pt-8">
+    <SocialLinks />
+  </div>
+</aside>
