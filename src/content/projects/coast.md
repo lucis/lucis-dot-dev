@@ -1,8 +1,8 @@
 ---
-title: "Coast — Product Engineering for Mobile"
-description: "Shipped web and mobile features with React Native, Expo, and TypeScript, from Figma into production."
+title: "Coast"
+description: "Product engineering at Coast — web and mobile features for a franchise SaaS, with React Native, Expo, and TypeScript from Figma to production."
 illustration: ../../assets/illustrations/coast.jpg
-url: https://www.linkedin.com/in/lcnjnr/
+url: https://coastapp.com
 order: 2
 draft: false
 ---

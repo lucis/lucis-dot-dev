@@ -7,28 +7,52 @@ interface Props {
 }
 const { project } = Astro.props;
 const { title, description, illustration, url } = project.data;
+
+const cardClass =
+  'grid grid-cols-1 gap-3 rounded-md border border-line bg-paper p-3 sm:grid-cols-[16rem_minmax(0,1fr)_auto] sm:items-center sm:gap-4';
+const interactiveClass = url
+  ? 'group transition-colors hover:border-line-strong hover:bg-white'
+  : '';
 ---
-<a
-  href={url}
-  target="_blank"
-  rel="noopener noreferrer"
-  class="group grid grid-cols-1 gap-3 rounded-md border border-line bg-paper p-3 transition-colors hover:border-line-strong hover:bg-white sm:grid-cols-[16rem_minmax(0,1fr)_auto] sm:items-center sm:gap-4"
->
-  <Image
-    src={illustration}
-    alt=""
-    widths={[400, 640, 960, 2172]}
-    sizes="(min-width: 640px) 16rem, 100vw"
-    class="h-auto w-full rounded-sm"
-  />
-  <div class="min-w-0">
-    <h3 class="text-lg font-bold leading-snug sm:text-xl">{title}</h3>
-    <p class="mt-1 text-sm leading-relaxed text-muted">{description}</p>
-  </div>
-  <span
-    class="hidden text-xl transition-transform group-hover:translate-x-0.5 sm:inline"
-    aria-hidden="true"
-  >
-    →
-  </span>
-</a>
+{
+  url ? (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class:list={[cardClass, interactiveClass]}
+    >
+      <Image
+        src={illustration}
+        alt=""
+        widths={[400, 640, 960, 2172]}
+        sizes="(min-width: 640px) 16rem, 100vw"
+        class="h-auto w-full rounded-sm"
+      />
+      <div class="min-w-0">
+        <h3 class="text-lg font-bold leading-snug sm:text-xl">{title}</h3>
+        <p class="mt-1 text-sm leading-relaxed text-muted">{description}</p>
+      </div>
+      <span
+        class="hidden text-xl transition-transform group-hover:translate-x-0.5 sm:inline"
+        aria-hidden="true"
+      >
+        →
+      </span>
+    </a>
+  ) : (
+    <div class={cardClass}>
+      <Image
+        src={illustration}
+        alt=""
+        widths={[400, 640, 960, 2172]}
+        sizes="(min-width: 640px) 16rem, 100vw"
+        class="h-auto w-full rounded-sm"
+      />
+      <div class="min-w-0">
+        <h3 class="text-lg font-bold leading-snug sm:text-xl">{title}</h3>
+        <p class="mt-1 text-sm leading-relaxed text-muted">{description}</p>
+      </div>
+    </div>
+  )
+}
