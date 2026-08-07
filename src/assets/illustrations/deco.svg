@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img">
+  <rect width="640" height="360" fill="#f7f6f3"/>
+  <rect x="24" y="24" width="592" height="312" fill="none" stroke="#111" stroke-width="3"/>
+  <text x="320" y="190" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#111">DECO</text>
+</svg>
