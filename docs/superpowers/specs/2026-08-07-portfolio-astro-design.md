@@ -15,7 +15,6 @@ Substituir o site Gatsby 2 (template Smakosh, ~2021) por um portfolio estático 
 - Sidebar + lista de projetos em destaque
 - Links externos nos cards de projeto e no CTA “Learn more about me”
 - Social: LinkedIn, GitHub, Blog (`https://blog.lucis.dev`)
-- Resume PDF servido e linkado a partir da sidebar
 - SEO básico (title, description, Open Graph mínimos)
 - Deploy estático na Vercel (domínio `lucis.dev`)
 
@@ -27,6 +26,7 @@ Substituir o site Gatsby 2 (template Smakosh, ~2021) por um portfolio estático 
 - Formulário de contato, reCAPTCHA, Notion, GitHub GraphQL
 - Analytics (gtag pode voltar depois)
 - PWA / service worker
+- Resume PDF no site (não publicar nem linkar)
 
 ## Decisões de produto
 
@@ -35,7 +35,8 @@ Substituir o site Gatsby 2 (template Smakosh, ~2021) por um portfolio estático 
 | Idioma | Inglês only |
 | Blog | Externo: `blog.lucis.dev` |
 | Ilustrações | Assets finais fornecidos pelo autor (woodcut); plugar no layout |
-| Destinos | URLs externas (projetos, CTA, socials, resume) |
+| Destinos | URLs externas (projetos, CTA, socials) |
+| Copy | Inspirar-se em `/Users/lucis/personal/resume/resume.pdf` (referência local; **não** vai para o repo nem para `public/`) |
 | Repo | Limpar Gatsby por completo; Astro no mesmo repositório |
 
 ## Stack
@@ -62,7 +63,7 @@ src/
   content/
     projects/          # um .md por projeto
   data/
-    site.ts            # nome, bio, CTA, socials, skill tags, resume path
+    site.ts            # nome, bio, CTA, socials, skill tags
   layouts/
     BaseLayout.astro
   pages/
@@ -70,7 +71,6 @@ src/
   styles/
     global.css         # tokens, fontes, reset leve
 public/
-  resume.pdf           # cópia de ~/personal/resume/resume.pdf
   favicon...
   illustrations/       # woodcuts (avatar + projetos), se não forem importados via assets
 ```
@@ -102,26 +102,23 @@ Corpo Markdown: opcional na v1 (não renderizado na home).
 - `name`, `titles[]` (ex.: Staff Product Engineer, AI-native builder)
 - `bio` (parágrafo em itálico na sidebar)
 - `cta`: `{ label, href }` — “Learn more about me” → URL externa
-- `socials`: LinkedIn, GitHub, Blog, Resume (`/resume.pdf`)
+- `socials`: LinkedIn, GitHub, Blog
 - `skills`: tags do pill (Product Engineer, TypeScript, …)
 - `seo`: title, description, canonical `https://lucis.dev`
 
-### Resume
+### Referência de copy (fora do site)
 
-1. Copiar `/Users/lucis/personal/resume/resume.pdf` → `public/resume.pdf` na implementação
-2. Incluir “Resume” como item da lista de links da sidebar (mesmo padrão visual de LinkedIn / GitHub / Blog)
-3. Abrir em nova aba (`target="_blank"`, `rel="noopener"`)
-4. Atualizações futuras do PDF: substituir o arquivo em `public/` (documentar no README)
+O arquivo local `/Users/lucis/personal/resume/resume.pdf` serve só para inspirar bio, titles, skill tags e descrições dos projetos em inglês. Não copiar para `public/`, não versionar no repo, não linkar na UI.
 
 ## Componentes
 
 | Componente | Responsabilidade |
 |------------|------------------|
 | `BaseLayout` | shell HTML, meta SEO, fontes, `global.css` |
-| `Sidebar` | avatar circular, nome, titles, bio, CTA, socials + resume |
+| `Sidebar` | avatar circular, nome, titles, bio, CTA, socials |
 | `SkillPill` | ícone + tags separadas por `·` |
 | `ProjectCard` | ilustração \| título + descrição \| seta; `<a>` externo; hover sutil |
-| `SocialLinks` | LinkedIn, GitHub, Blog, Resume — mesma lista de links da sidebar |
+| `SocialLinks` | LinkedIn, GitHub, Blog |
 
 `index.astro` monta: `BaseLayout` → grid → `Sidebar` \| (`SkillPill` + heading “Featured projects” + lista de `ProjectCard`).
 
@@ -144,12 +141,11 @@ Preservar apenas o que ainda fizer sentido: domínio, eventual favicon/branding 
 
 - `astro build` gera site estático sem erros
 - Home corresponde ao mockup em estrutura (sidebar + pill + projetos)
-- Todos os projetos, CTA, socials e resume abrem URLs corretas
+- Todos os projetos, CTA e socials abrem URLs corretas
 - Lighthouse razoável em performance (site quase sem JS)
 - Conteúdo de projeto editável sem tocar em componentes (só collection + assets)
 
 ## Riscos / notas
 
 - Qualidade visual depende dos assets woodcut entregues; sem eles, usar paths definidos e placeholders mínimos só se o asset atrasar
-- Conteúdo em inglês dos projetos e bio precisa ser fornecido ou migrado do mockup na implementação
-- PDF do resume vive fora do repo de origem; a cópia em `public/` é a fonte de verdade do site (não symlink frágil para path absoluto de outra pasta)
+- Conteúdo em inglês (bio, skills, projetos) deve ser derivado do mockup + do resume PDF de referência, sem publicar o PDF
