@@ -12,25 +12,23 @@ const { title, description, illustration, url } = project.data;
   href={url}
   target="_blank"
   rel="noopener noreferrer"
-  class="group flex flex-col gap-4 rounded-md border border-line bg-paper p-3 transition-colors hover:border-line-strong hover:bg-white"
+  class="group grid grid-cols-1 gap-3 rounded-md border border-line bg-paper p-3 transition-colors hover:border-line-strong hover:bg-white sm:grid-cols-[16rem_minmax(0,1fr)_auto] sm:items-center sm:gap-4"
 >
   <Image
     src={illustration}
     alt=""
-    widths={[640, 960, 1280, 2172]}
-    sizes="(min-width: 1024px) 640px, 100vw"
+    widths={[400, 640, 960, 2172]}
+    sizes="(min-width: 640px) 16rem, 100vw"
     class="h-auto w-full rounded-sm"
   />
-  <div class="flex items-start justify-between gap-4">
-    <div>
-      <h3 class="text-xl font-bold">{title}</h3>
-      <p class="mt-1 text-sm leading-relaxed text-muted">{description}</p>
-    </div>
-    <span
-      class="shrink-0 text-xl transition-transform group-hover:translate-x-0.5"
-      aria-hidden="true"
-    >
-      →
-    </span>
+  <div class="min-w-0">
+    <h3 class="text-lg font-bold leading-snug sm:text-xl">{title}</h3>
+    <p class="mt-1 text-sm leading-relaxed text-muted">{description}</p>
   </div>
+  <span
+    class="hidden text-xl transition-transform group-hover:translate-x-0.5 sm:inline"
+    aria-hidden="true"
+  >
+    →
+  </span>
 </a>
